@@ -8,9 +8,8 @@ resolution = 10
 cols = WIDTH // resolution + 1
 rows = HEIGHT // resolution + 1
 WHITE = (255, 255, 255)
-
-def color(rgb):
-    return int(rgb), int(rgb), int(rgb)
+bgColor = (0, 0, 0)
+circleColor = (30, 30, 30)
  
 def getState(a, b, c, d):
     return a * 8 + b * 4 + c * 2 + d * 1
@@ -29,7 +28,7 @@ for i in range(cols):
 
 run = True
 while run:
-    screen.fill(color(0))
+    screen.fill(bgColor)
     for event in pygame.event.get():
         if event.type == pygame.QUIT: run = False
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -45,7 +44,7 @@ while run:
         for j in range(rows):
             strokeWeight = round(resolution * 0.2)
 
-            pygame.draw.circle(screen, color(10), (i*resolution, j*resolution), strokeWeight, strokeWeight)
+            pygame.draw.circle(screen, circleColor, (i*resolution, j*resolution), strokeWeight, strokeWeight)
 
     for i in range(cols-1):
         for j in range(rows-1):

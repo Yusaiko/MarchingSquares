@@ -3,7 +3,7 @@ from vector import createVector
 pygame.init()
 
 
-#Auflösung des Grids und Berechnung der Zeilen und Spalten
+
 resolution = 10
 cols = WIDTH // resolution + 1
 rows = HEIGHT // resolution + 1
